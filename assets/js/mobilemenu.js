@@ -5,13 +5,14 @@
 toggleHandler();
 
 function toggleHandler() {
+    
     var toggle = document.querySelector(".c-hamburger");
     var sidemenu = document.querySelector(".side-menu");
     var container = document.querySelector(".container");
     
     toggle.addEventListener( "click", function(e) {
         e.preventDefault();
-        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+        (toggle.classList.contains("is-active") === true) ? toggle.classList.remove("is-active") : toggle.classList.add("is-active");
         (sidemenu.classList.contains("is-open") === true) ? sidemenu.classList.remove("is-open") : sidemenu.classList.add("is-open");
     });
     
@@ -24,6 +25,7 @@ function toggleHandler() {
         sidemenu.classList.remove("is-open");
         if (toggle.classList.contains("is-active") === true) toggle.classList.remove("is-active");
     });
+
     container.addEventListener( "touchmove", function(e) {
         if (sidemenu.classList.contains("is-open") === false) sidemenu.classList.add("is-open");
     	if (toggle.classList.contains("is-active") === false) toggle.classList.add("is-active");
